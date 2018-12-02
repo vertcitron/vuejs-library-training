@@ -32,11 +32,22 @@ const app = new Vue({
     newTaskField: '',
     tasksList: []
   },
+  computed: {
+    sortedTasksList () {
+      return this.tasksList.sort((a, b) => {
+        if (a.done === b.done) return a.created - b.created
+        if (a.done && !b.done) return 1
+        if (!a.done && b.done) return -1
+        return 0
+      })
+    }
+  },
   methods: {
     addTask () {
       const newTask = {
         text: this.newTaskField,
-        done: false
+        done: false,
+        created: Date.now()
       }
       this.tasksList.push(newTask)
       this.newTaskField = ''
