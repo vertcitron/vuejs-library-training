@@ -15,11 +15,7 @@
           <button v-on:click="addTask">OK</button>
         </section>
         <section class="list">
-          <div v-for="task in tasksList">
-            <span>{{task.text}}</span>
-            <button class="done">Fait</button>
-            <button class="delete disable">Effacer</button>
-          </div>
+          <todo-item v-for="(task, i) in tasksList" v-bind:task="task" v-bind:key='i'></todo-item>
         </section>
         <footer>Formation initiale vue.js</footer>
       </main>
