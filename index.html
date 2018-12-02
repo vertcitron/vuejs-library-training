@@ -2,20 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>La bibliothèque vue.js</title>
+    <title>To Do List</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   </head>
   <body>
     <div id="app">
       <main>
-        <header>La bibliothèque de base vue.js</header>
+        <header>La bonne vieille ToDo List</header>
         <section>
-          <input type="text" placeholder="Entrez votre nom..." v-model="nameField">
-          <button v-on:click="copyName">OK</button>
+          <input type="text" placeholder="Ajoutez une tâche à votre liste..." v-model="newTaskField">
+          <button v-on:click="addTask">OK</button>
         </section>
-        <section>
-          <h2>{{ displayText }}</h2>
+        <section class="list">
+          Ici nous aurons la liste des tâches.
         </section>
         <footer>Formation initiale vue.js</footer>
       </main>

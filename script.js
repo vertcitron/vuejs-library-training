@@ -1,18 +1,18 @@
 const app = new Vue({
   el: '#app',
   data: {
-    nameField: '',
-    nameDisplay: ''
-  },
-  computed: {
-    displayText () {
-      return this.nameDisplay ? `Bonjour ${this.nameDisplay} ...` : ''
-    }
+    newTaskField: '',
+    tasksList: []
   },
   methods: {
-    copyName () {
-      this.nameDisplay = this.nameField
-      this.nameField = ''
+    addTask () {
+      const newTask = {
+        text: this.newTaskField,
+        done: false
+      }
+      this.tasksList.push(newTask)
+      this.newTaskField = ''
+      console.log(this.tasksList)
     }
   }
 })
