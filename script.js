@@ -1,9 +1,9 @@
 Vue.component('TodoItem', {
   template: `
     <div>
-      <span v-bind:class="{ crossed: task.done }">{{ task.text }}</span>
-      <button class="done" v-on:click="toggleTask">{{ toggleBtnText }}</button>
-      <button class="delete disable">Effacer</button>
+      <span :class="{ crossed: task.done }">{{ task.text }}</span>
+      <button class="done" @click="toggleTask">{{ toggleBtnText }}</button>
+      <button class="delete" :class="{disable: !task.done}" @click="deleteTask">Effacer</button>
     </div>
   `,
   props: {
@@ -17,6 +17,11 @@ Vue.component('TodoItem', {
   methods: {
     toggleTask () {
       this.$emit('toggle', this.key)
+    },
+    deleteTask () {
+      if (this.task.done) {
+        this.$emit('delete')
+      }
     }
   }
 })
@@ -38,6 +43,9 @@ const app = new Vue({
     },
     toggle (i) {
       this.tasksList[i].done = !this.tasksList[i].done
+    },
+    deleteTask (i) {
+      this.tasksList.splice(i, 1)
     }
   }
 })
