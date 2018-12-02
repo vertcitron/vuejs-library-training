@@ -77,6 +77,10 @@ body {
   flex: 1;
 }
 
+#app main section.list div span.crossed {
+  text-decoration: line-through;
+}
+
 #app main section.list div button {
   display: block;
   margin-right: 8px;
