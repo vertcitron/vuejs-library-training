@@ -4,6 +4,11 @@ const app = new Vue({
     nameField: '',
     nameDisplay: ''
   },
+  computed: {
+    displayText () {
+      return this.nameDisplay ? `Bonjour ${this.nameDisplay} ...` : ''
+    }
+  },
   methods: {
     copyName () {
       this.nameDisplay = this.nameField
