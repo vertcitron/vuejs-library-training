@@ -52,6 +52,44 @@ body {
 
 #app main section.list {
   flex: 1;
+  overflow-y: auto;
+  margin: 0 32px;
+}
+
+#app main section.list div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+#app main section.list div:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+#app main section.list div span {
+  display: block;
+  text-align: left;
+  flex: 1;
+}
+
+#app main section.list div button {
+  display: block;
+  margin-right: 8px;
+  padding: 4px 12px;
+  width: 90px;
+}
+
+#app main section.list div button.done {
+  background-color: #1a6d1e;
+}
+
+#app main section.list div button.delete {
+  background-color: #a30000;
 }
 
 #app input[type=text] {
@@ -64,6 +102,12 @@ body {
   line-height: 24px;
   margin-right: 16px;
 }
+
+#app main section.list div button.disable {
+  opacity: 0.33;
+  cursor: default;
+}
+
 
 #app input[type=text]:focus {
   outline: none;
@@ -82,4 +126,5 @@ body {
   color: white;
   font-weight: bold;
   padding: 8px 16px;
+  cursor: pointer;
 }

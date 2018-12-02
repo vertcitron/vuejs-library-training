@@ -12,7 +12,6 @@ const app = new Vue({
       }
       this.tasksList.push(newTask)
       this.newTaskField = ''
-      console.log(this.tasksList)
     }
   }
 })
