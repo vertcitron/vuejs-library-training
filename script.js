@@ -3,5 +3,11 @@ const app = new Vue({
   data: {
     nameField: '',
     nameDisplay: ''
+  },
+  methods: {
+    copyName () {
+      this.nameDisplay = this.nameField
+      this.nameField = ''
+    }
   }
 })
