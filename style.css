@@ -79,6 +79,7 @@ body {
 
 #app main section.list div span.crossed {
   text-decoration: line-through;
+  color: #aaaaaa;
 }
 
 #app main section.list div button {
