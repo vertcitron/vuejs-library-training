@@ -51,12 +51,24 @@ const app = new Vue({
       }
       this.tasksList.push(newTask)
       this.newTaskField = ''
+      this.storeLocal()
     },
     toggle (i) {
       this.tasksList[i].done = !this.tasksList[i].done
+      this.storeLocal()
     },
     deleteTask (i) {
       this.tasksList.splice(i, 1)
+      this.storeLocal()
+    },
+    storeLocal () {
+      localStorage.setItem('tasksList', JSON.stringify(this.tasksList))
+    },
+    readLocal () {
+      return JSON.parse(localStorage.getItem('tasksList'))
     }
+  },
+  mounted () {
+    this.tasksList = this.readLocal() || []
   }
 })
