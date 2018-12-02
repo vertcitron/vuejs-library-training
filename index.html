@@ -12,6 +12,7 @@
         <header>La bibliothèque de base vue.js</header>
         <section>
           <input type="text" placeholder="Entrez votre nom..." v-model="nameField">
+          <button v-on:click="nameDisplay = nameField">OK</button>
         </section>
         <section>
           <h2>Bonjour {{ nameDisplay }} ...</h2>
